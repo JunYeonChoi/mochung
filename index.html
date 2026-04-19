@@ -119,6 +119,17 @@
         <div class="main-names">[최영남] & [최영남]</div>
         <div class="main-date">[202X년 X월 X일 토요일 오후 X시]<br>[jk컨벤션 어쩌구 및 4층]</div>
     </section>
+    <section>
+    <div class="music-container" style="margin: 20px 0;">
+    <audio id="bgm" loop>
+        <source src="./maple.mp3" type="audio/mpeg">
+        브라우저가 오디오를 지원하지 않습니다.
+    </audio>
+    <button onclick="toggleMusic()" id="musicBtn" class="account-btn" style="background: #d4c5b9;">
+        🎵 배경음악 재생
+    </button>
+</div>
+        </section>
   <section>
       <div class="photo-container">
     <img src="./fucku.jfif" alt="청첩장 메인 사진">
@@ -161,6 +172,21 @@
     <footer>
         COPYRIGHT © 202X [신랑이름]&[신부이름] ALL RIGHTS RESERVED.
     </footer>
+<script>
+    var audio = document.getElementById("bgm");
+    var btn = document.getElementById("musicBtn");
 
+    function toggleMusic() {
+        if (audio.paused) {
+            audio.play();
+            btn.innerText = "⏸ 배경음악 정지";
+            btn.style.background = "#a89486"; // 재생 중일 때 버튼 색상 변경
+        } else {
+            audio.pause();
+            btn.innerText = "🎵 배경음악 재생";
+            btn.style.background = "#d4c5b9";
+        }
+    }
+</script>
 </body>
 </html>
